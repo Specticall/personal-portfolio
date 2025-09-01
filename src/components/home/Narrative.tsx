@@ -14,7 +14,7 @@ export default function Narrative() {
 
   const tokens = content.split(" ");
   return (
-    <section className="section py-64 md:py-48 sm:py-32">
+    <section className="section pt-72 -mt-80 py-80 lg:mt-0 lg:pt-64 md:pb-64 md:pt-48">
       <div ref={ref} className="relative">
         <p className="text-large font-medium max-w-[70rem] mx-auto whitespace-pre-line">
           {tokens.map((token, i) => {

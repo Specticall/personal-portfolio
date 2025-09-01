@@ -4,6 +4,11 @@
   padding-inline: 2.5rem;
 }
 
+.invert-colors {
+  filter: invert();
+  mix-blend-mode: difference;
+}
+
 .text-title {
   font-size: clamp(3.25rem, 15vw, 7.5rem);
   letter-spacing: -3%;

@@ -1,3 +1,8 @@
+import { motion, Variants } from "motion/react";
+import TextMaskReveal from "../animated/TextMaskReveal";
+import { SMOOTH_EASING } from "@/lib/constants";
+import ServicesTagsList from "./ServicesTagsList";
+
 const data = [
   {
     title: "Fullstack Development.",
@@ -32,34 +37,17 @@ export default function ServicesList() {
               0{i + 1}
             </p>
             <h3 className="text-medium text-white leading-[100%]! lg:col-start-2 sm:col-start-1">
-              {item.title}
+              <TextMaskReveal content={item.title} />
             </h3>
             <div className="lg:col-start-2 sm:col-start-1">
-              <p className="text-secondary text-body mb-6">
-                {item.description}
+              <p className="text-secondary text-subtitle leading-[175%]! mb-6">
+                <TextMaskReveal content={item.description} />
               </p>
-              <TagsList items={item.tags} />
+              <ServicesTagsList items={item.tags} />
             </div>
           </li>
         );
       })}
     </ul>
-  );
-}
-
-function TagsList({ items }: { items: string[] }) {
-  return (
-    <div className="flex flex-wrap gap-3 items-center">
-      {items.map((item) => {
-        return (
-          <div
-            className="bg-secondary/25 text-white/90 text-body rounded-full px-5 py-0.5"
-            key={item}
-          >
-            {item}
-          </div>
-        );
-      })}
-    </div>
   );
 }

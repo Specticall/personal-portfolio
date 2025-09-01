@@ -23,7 +23,6 @@ export default function Parallax({
     target: ref,
     offset: ["start end", "end start"],
   });
-  useMotionValueEvent(scrollYProgress, "change", (v) => console.log(v));
   const slideY = useTransform(scrollYProgress, [0, 1], [0, -speed]);
   return (
     <motion.div

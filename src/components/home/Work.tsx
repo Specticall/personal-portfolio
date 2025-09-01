@@ -2,10 +2,11 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import WorkList from "./WorkList";
 import Button from "../general/Button";
+import TextMaskReveal from "../animated/TextMaskReveal";
 
 export default function Work() {
   return (
-    <section className="relative">
+    <section className="relative -mt-160 md:-mt-150">
       <div className="relative">
         <Image
           src="/images/abstract-white.png"
@@ -14,29 +15,49 @@ export default function Work() {
           alt="Abstract white image"
           className="absolute inset- -z-10  opacity-50 w-full h-full object-cover"
         />
-        <div className="section text-center flex items-center justify-center py-48 flex-col xs:items-start md:py-24">
+        <div className="section text-center flex items-center justify-center lg:pb-64 lg:py-72 py-84  flex-col xs:items-start">
           <p className="text-body text-secondary mb-3 border border-border px-6 py-1.5 rounded-full sm:py-0.5 sm:px-4">
             My Most Recent Work
           </p>
           <div className="relative mt-4 sm:mt-2">
-            <div className="inline-block absolute -left-[12%] lg:-left-[16%] md:-left-[18%] top-0 bg-accent rounded-full text-white p-6 md:p-4  w-fit aspect-square sm:hidden">
-              <Icon
-                icon={"clarity:arrow-line"}
-                className="-rotate-135 text-[clamp(1rem,5vw,1.5rem)]"
-              />
-            </div>
-
-            <h3 className="text-heading font-semibold! xs:text-left">
-              Highlights of the most recent <br className="xs:hidden" />{" "}
-              projects I’ve worked on.{" "}
-              <span className="text-secondary font-medium! text-medium align-middle">
-                012
-              </span>
+            <h3 className="text-heading tracking-tighter! font-semibold! xs:text-left">
+              <div className=" inline relative">
+                <div className="absolute -left-24 top-0 bg-accent rounded-full text-white p-6 md:p-4  w-fit aspect-square md:hidden">
+                  <Icon
+                    icon={"clarity:arrow-line"}
+                    className="-rotate-135 text-[clamp(1rem,4vw,1.5rem)]"
+                  />
+                </div>
+                {/* The desktop version of the text is seperated to retain the break liens */}
+                <>
+                  <TextMaskReveal
+                    className="whitespace-nowrap sm:hidden"
+                    content="Highlights of the most recent"
+                  />
+                  <br className="sm:hidden" />
+                  <TextMaskReveal
+                    content="projects I’ve worked on."
+                    className="sm:hidden"
+                  />
+                </>
+                {/* The mobile version of the text is combined */}
+                <>
+                  <TextMaskReveal
+                    className="hidden sm:inline"
+                    content="Highlights of the most recent projects I’ve worked on."
+                  />
+                </>
+                <span className="text-secondary font-medium! text-medium align-middle">
+                  <TextMaskReveal content="04" />
+                </span>
+              </div>
             </h3>
           </div>
           <p className="text-body text-secondary mt-6 max-w-[30rem] xs:text-left">
-            A list of projects I have contributed to, including competition
-            entries and independent passion projects
+            <TextMaskReveal
+              content="A list of projects I have contributed to, including competition
+            entries and independent passion projects"
+            />
           </p>
         </div>
       </div>
