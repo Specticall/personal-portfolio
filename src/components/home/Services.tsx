@@ -5,7 +5,7 @@ import Parallax from "../animated/Parallax";
 
 export default function Services() {
   return (
-    <Parallax speed={800} className="relative z-10">
+    <Parallax speed={400} className="relative z-10">
       <section className="bg-dark pb-12">
         <div className="relative section ">
           <Parallax speed={150}>

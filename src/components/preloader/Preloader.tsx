@@ -54,85 +54,72 @@ export default function Preloader() {
 
   return (
     <AnimatePresence mode="wait">
-      {isLoading && (
-        <motion.div
-          variants={{
-            hide: {
-              scale: 1.4,
-              clipPath: "inset(0 0 0 0)",
-            },
-            show: {
-              scale: 1,
-              clipPath: "inset(0 0 0 0)",
-              transition: {
-                duration: LOADER_TIME,
-                ease: SLOW_DOWN_EASING,
+      <div className="overflow-hidden">
+        {isLoading && (
+          <motion.div
+            variants={{
+              hide: {
+                scale: 1.4,
               },
-            },
-            exit: {
-              clipPath: "inset(0 0 100% 0)",
-              transition: {
-                duration: LOADER_EXIT_TIME,
-                ease: SMOOTH_EASING,
-              },
-            },
-          }}
-          initial={"hide"}
-          animate={"show"}
-          exit={"exit"}
-          className="bg-dark flex items-center justify-center min-h-dvh z-[999] fixed inset-0 inverted-colors"
-        >
-          {lineRanges
-            .concat(lineRanges.map((r) => r.map((n) => n * -1)))
-            .map(([animate, initial], i) => {
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ x: initial, opacity: 0 }}
-                  animate={{ x: animate, opacity: 1 }}
-                  transition={{
-                    duration: 2,
-                    ease: SLOW_DOWN_EASING,
-                  }}
-                  className="absolute left-1/2 -translate-x-1/2 h-full w-[1px] bg-white/10"
-                ></motion.div>
-              );
-            })}
-
-          <div className="inverted-colors">
-            <motion.div
-              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{
-                y: {
-                  duration: 1,
+              show: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  duration: LOADER_TIME,
                   ease: SLOW_DOWN_EASING,
                 },
-                duration: 0.75,
-              }}
-              className="flex flex-col justify-between items-center min-h-dvh p-6 w-full"
-            >
-              <p className="text-body text-white/50 bg-transparent">
-                <TextMaskReveal content="Portfolio." />
-              </p>
-              <h2 className="bg-transparent text-large text-white">{count}%</h2>
-              <p className="text-body text-white/50 bg-transparent">
-                <TextMaskReveal content="© Joseph" duration={1.5} />
-              </p>
-            </motion.div>
-            <motion.div
-              style={{
-                scaleY,
-              }}
-              transition={{
-                duration: LOADER_TIME,
-                ease: SMOOTH_EASING,
-              }}
-              className="bg-white/1 fixed inset-0 top-0 -z-10 origin-bottom"
-            ></motion.div>
-          </div>
-        </motion.div>
-      )}
+              },
+              exit: {
+                scale: 0.5,
+                opacity: 0,
+                transition: {
+                  duration: LOADER_EXIT_TIME,
+                  ease: SMOOTH_EASING,
+                },
+              },
+            }}
+            initial={"hide"}
+            animate={"show"}
+            exit={"exit"}
+            className="bg-[#fbfbfb] flex items-center justify-center min-h-dvh z-[999] fixed inset-0 inverted-colors"
+          >
+            <div className="inverted-colors">
+              <motion.div
+                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{
+                  y: {
+                    duration: 1,
+                    ease: SLOW_DOWN_EASING,
+                  },
+                  duration: 0.75,
+                }}
+                className="flex flex-col justify-between items-center min-h-dvh p-6 w-full"
+              >
+                <p className="text-body text-black/50 bg-transparent">
+                  <TextMaskReveal content="Portfolio." />
+                </p>
+                <h2 className="bg-transparent text-large text-black">
+                  {count}%
+                </h2>
+                <p className="text-body text-black/50 bg-transparent">
+                  <TextMaskReveal content="© Joseph" duration={1.5} />
+                </p>
+              </motion.div>
+              <motion.div
+                style={{
+                  scaleY,
+                }}
+                transition={{
+                  duration: LOADER_TIME,
+                  ease: SMOOTH_EASING,
+                }}
+                className="bg-white fixed inset-0 top-0 -z-10 origin-bottom"
+              ></motion.div>
+            </div>
+          </motion.div>
+        )}
+      </div>
     </AnimatePresence>
   );
 }

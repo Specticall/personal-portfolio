@@ -2,7 +2,7 @@ import AnimatedCounter from "@/components/animated/AnimatedCounter";
 import AnimatedIncrementingCounter from "@/components/animated/AnimatedIncrementingCounter";
 import Navbar from "@/components/general/Navbar";
 import Footer from "@/components/home/Footer";
-import Hero from "@/components/home/Hero";
+import Hero from "@/components/home/Hero/Hero";
 import Narrative from "@/components/home/Narrative";
 import Services from "@/components/home/Services";
 import ShowReelVideo from "@/components/home/ShowReelVideo";

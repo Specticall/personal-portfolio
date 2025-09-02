@@ -2,17 +2,17 @@
 
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import Globe from "../general/Globe";
+import Globe from "../../general/Globe";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import {
   LOADER_EXIT_TIME,
   LOADER_TIME,
   OVERALL_LOADER_TIME,
-} from "../preloader/Preloader";
+} from "../../preloader/Preloader";
 import { SLOW_DOWN_EASING, SMOOTH_EASING } from "@/lib/constants";
-import TextMaskReveal from "../animated/TextMaskReveal";
-import CharacterMaskReveal from "../animated/CharacterMaskReveal";
+import TextMaskReveal from "../../animated/TextMaskReveal";
+import CharacterMaskReveal from "../../animated/CharacterMaskReveal";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);

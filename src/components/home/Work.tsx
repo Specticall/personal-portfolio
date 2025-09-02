@@ -6,7 +6,7 @@ import TextMaskReveal from "../animated/TextMaskReveal";
 
 export default function Work() {
   return (
-    <section className="relative -mt-160 md:-mt-150">
+    <section className="relative -mt-120 md:-mt-90">
       <div className="relative">
         <Image
           src="/images/abstract-white.png"

@@ -3,9 +3,22 @@
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import Button from "./Button";
 import { cn } from "@/lib/utils";
+import { SMOOTH_EASING, SMOOTH_FAST_EASING } from "@/lib/constants";
+import { LOADER_DELAY } from "../home/Hero/Hero";
 export default function Navbar() {
   return (
     <motion.nav
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+        ease: SMOOTH_EASING,
+        delay: LOADER_DELAY + 1,
+      }}
       className={cn(
         "transition-[background_0.5s]  fixed top-0 right-0 left-0 z-50 invert-colors bg-transparent"
       )}

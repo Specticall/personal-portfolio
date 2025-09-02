@@ -10,6 +10,7 @@ type Props = {
   staggerValue?: number;
   duration?: number;
   once?: boolean;
+  delay?: number;
 };
 
 const createVariants = (duration?: number) => {
@@ -31,6 +32,7 @@ export default function CharacterMaskReveal({
   staggerValue,
   once = false,
   duration,
+  delay = 0,
   ...props
 }: Props & HTMLMotionProps<"span">) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -43,7 +45,9 @@ export default function CharacterMaskReveal({
       initial="hidden"
       whileInView="show"
       transition={{
-        delayChildren: stagger(staggerValue || 0.01),
+        delayChildren: stagger(staggerValue || 0.01, {
+          startDelay: delay || 0,
+        }),
       }}
       viewport={{ once }}
       className={cn("whitespace-pre-line ", props.className)}
