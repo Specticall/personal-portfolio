@@ -3,6 +3,7 @@ import WorkBanner from "./WorkBanner";
 import Star from "@/components/general/Star";
 import CharacterMaskReveal from "@/components/animated/CharacterMaskReveal";
 import TextMaskReveal from "@/components/animated/TextMaskReveal";
+import Parallax from "@/components/animated/Parallax";
 
 export default function Work() {
   return (

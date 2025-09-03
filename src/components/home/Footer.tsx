@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../general/Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Parallax from "../animated/Parallax";
 
 const socials = [
   {
@@ -21,8 +22,8 @@ const socials = [
 ];
 export default function Footer() {
   return (
-    <footer className="bg-dark">
-      <section className="section py-64 md:py-48">
+    <footer className="bg-dark flex flex-col">
+      <section className="section max-w-[1400px]! py-64 md:py-48 w-full flex-1">
         <Icon
           icon="clarity:arrow-line"
           className="md:hidden rotate-135 mb-8 text-[3rem] text-white"
@@ -78,7 +79,7 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <div className="section flex items-center justify-between xs:justify-center text-secondary py-4">
+      <div className="section w-full flex items-center justify-between xs:justify-center text-secondary py-4">
         <p className="text-body">© Joseph Christian Yusmita</p>
         <p className="xs:hidden text-body">Portfolio 2025</p>
       </div>

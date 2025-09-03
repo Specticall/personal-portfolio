@@ -5,6 +5,7 @@ import Footer from "@/components/home/Footer";
 import Hero from "@/components/home/Hero/Hero";
 import Narrative from "@/components/home/Narrative";
 import Services from "@/components/home/Services";
+import ShowcaseSlide from "@/components/home/ShowcaseSlide/ShowcaseSlide";
 import ShowReelVideo from "@/components/home/ShowReelVideo";
 import Work from "@/components/home/Work/Work";
 import Preloader from "@/components/preloader/Preloader";
@@ -14,7 +15,7 @@ export default function Page() {
   return (
     <ReactLenis
       root
-      options={{ lerp: 0.1, duration: 1.5, wheelMultiplier: 1.1 }}
+      options={{ lerp: 0.1, duration: 1.5, wheelMultiplier: 1.25 }}
     >
       <div className="">
         <Preloader />
@@ -22,6 +23,7 @@ export default function Page() {
         <Hero />
         <ShowReelVideo />
         <Narrative />
+        <ShowcaseSlide />
         <Services />
         <Work />
         <Footer />

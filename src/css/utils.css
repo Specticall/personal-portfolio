@@ -23,7 +23,7 @@
 }
 
 .text-heading-large {
-  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   letter-spacing: -4%;
   font-weight: 500;
   line-height: 100%;
