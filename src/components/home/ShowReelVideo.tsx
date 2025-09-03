@@ -13,7 +13,7 @@ export default function ShowReelVideo() {
     offset: ["start end", "end start"],
   });
 
-  const offsetYShift = isUnderLG ? 0.5 : 0.73;
+  const offsetYShift = isUnderLG ? 0.625 : 0.73;
   const y = useTransform(
     scrollYProgress,
     [0.1, 0.35],
@@ -70,15 +70,6 @@ export default function ShowReelVideo() {
           loop
         />
       </motion.div>
-      <div className="h-fit hidden md:block">
-        <video
-          src="/videos/showreel.mp4"
-          autoPlay
-          className="w-full sm:rounded-none aspect-video "
-          muted
-          loop
-        />
-      </div>
     </>
   );
 }

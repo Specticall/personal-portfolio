@@ -7,7 +7,7 @@ import { LOADER_DELAY } from "./Hero";
 export default function HeroRightSide() {
   return (
     <div className="flex items-center gap-4 text-secondary ">
-      <div className="absolute right-8 bottom-0  self-end flex flex-col items-center justify-center gap-4 pr-7 md:pr-0 md:right-4 sm:bottom-20">
+      <div className="absolute right-8 bottom-0  self-end flex flex-col items-center justify-center gap-4 pr-7 md:pr-0 md:right-4 sm:bottom-20 md:hidden">
         <motion.div
           initial={{ rotate: -180, scale: 1.5, opacity: 0 }}
           animate={{ rotate: 0, scale: 1, opacity: 1 }}

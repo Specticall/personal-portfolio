@@ -13,7 +13,7 @@ export default function HeroArrowCircle() {
       }}
       initial={{ scale: 0, rotate: -180, opacity: 0 }}
       animate={{ scale: 1, rotate: 0, opacity: 1 }}
-      className="absolute left-1/2 -bottom-20 -translate-x-1/2 bg-accent rounded-full -mt-[2.5%] z-10 text-white p-10 sm:p-5.5 w-fit aspect-square"
+      className="absolute left-1/2 -bottom-20 md:-bottom-8  -translate-x-1/2 bg-accent rounded-full -mt-[2.5%] z-10 text-white p-10 md:p-5.5 w-fit aspect-square"
     >
       <Icon
         icon={"clarity:arrow-line"}

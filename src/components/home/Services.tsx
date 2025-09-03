@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import ServicesList from "./ServicesList";
 import Parallax from "../animated/Parallax";
+import { HTMLMotionProps, motion } from "motion/react";
+import { SLOW_DOWN_EASING, SMOOTH_EASING } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 export default function Services() {
   return (
@@ -21,13 +26,41 @@ export default function Services() {
         <Parallax speed={100} className="pt-36 md:pt-16">
           <div className="section py-24 pb-18 relative md:pb-8">
             <DownArrow />
-            <h2 className="text-white text-heading">
-              The Skills and Expertise <br />
-              <span className="text-secondary">I Bring to the Table</span>
-              <span className="inline-flex text-body items-center justify-center border border-border/25 rounded-full px-6 py-2 align-middle ml-4 md:hidden">
-                What I Do
-              </span>
-            </h2>
+            <motion.h2
+              initial={{
+                filter: "blur(10px)",
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                filter: "blur(0px)",
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+                ease: SMOOTH_EASING,
+              }}
+              className="text-white text-heading-large text-center sm:text-start"
+            >
+              <span>TURNING</span>{" "}
+              <span
+                className="font-cursive font-regular!"
+                style={{ fontStyle: "italic" }}
+              >
+                VISION
+              </span>{" "}
+              <Star className="hidden xs:inline-block" />
+              <br />
+              <span>INTO</span>{" "}
+              <span
+                className="font-cursive font-regular!"
+                style={{ fontStyle: "italic" }}
+              >
+                WORK
+              </span>{" "}
+              <Star className="xs:hidden" />
+            </motion.h2>
           </div>
           <ServicesList />
         </Parallax>
@@ -49,5 +82,25 @@ function DownArrow() {
         height={100}
       />
     </div>
+  );
+}
+
+function Star(props: HTMLMotionProps<"div">) {
+  return (
+    <motion.div
+      {...props}
+      initial={{ rotate: 180, scale: 0, opacity: 0 }}
+      whileInView={{ rotate: 0, scale: 1, opacity: 1 }}
+      transition={{
+        duration: 1,
+        ease: SLOW_DOWN_EASING,
+      }}
+      className={cn("inline-block", props.className)}
+    >
+      <Icon
+        icon={"iconoir:spark-solid"}
+        className="[&_*]:stroke-none! text-white inline"
+      />
+    </motion.div>
   );
 }

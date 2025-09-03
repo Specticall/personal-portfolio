@@ -17,7 +17,7 @@ export default function HeroStar(props: HTMLMotionProps<"div">) {
     >
       <Icon
         icon={"iconoir:spark-solid"}
-        className="[&_*]:stroke-none! text-accent"
+        className="[&_*]:stroke-none! text-accent md:hidden"
       />
     </motion.div>
   );

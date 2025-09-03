@@ -18,8 +18,15 @@
 
 @media screen and (max-width: 1023px) {
   .text-title {
-    font-size: clamp(4.5rem, 14vw, 10rem);
+    font-size: clamp(5rem, 14vw, 10rem);
   }
+}
+
+.text-heading-large {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  letter-spacing: -4%;
+  font-weight: 500;
+  line-height: 100%;
 }
 
 .text-heading {
