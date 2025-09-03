@@ -14,7 +14,6 @@ export default function Services() {
       <section className="bg-dark pb-12">
         <div className="relative section ">
           <Parallax speed={150}>
-            {/* -top-20 lg:-top-10 */}
             <div className="absolute right-1/4 xl:right-1/6 md:right-8 bg-accent rounded-full text-white p-14 lg:p-8 w-fit aspect-square">
               <Icon
                 icon={"clarity:arrow-line"}

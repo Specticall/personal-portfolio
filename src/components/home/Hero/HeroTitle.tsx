@@ -6,7 +6,7 @@ import HeroArrowCircle from "./HeroArrowCircle";
 
 export default function HeroTitle() {
   return (
-    <motion.div className="flex flex-col items-center justify-center min-h-[clamp(1000px,100dvh,1200px)]  md:-translate-y-0 -translate-y-32 md:py-0 md:min-h-full ">
+    <motion.div className="flex flex-col items-center justify-center min-h-[clamp(800px,100dvh,1200px)]  md:-translate-y-0 -translate-y-32 md:py-0 md:min-h-full ">
       <p className="text-small font-medium mb-2 text-black/80">
         <span className="md:hidden">SOFTWARE</span> ENGINEER •{" "}
         <span className="md:hidden">PRODUCT</span> DESIGNER

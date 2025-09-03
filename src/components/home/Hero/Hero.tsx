@@ -31,21 +31,12 @@ export default function Hero() {
           delay: LOADER_DELAY,
         }}
         id="showreel-anchor"
-        className="relative section items-center justify-center grid grid-cols-[auto_1fr_auto] md:grid-cols-1 mb-12 md:mb-0 md:pt-32"
+        className="relative section items-center justify-center grid grid-cols-[auto_1fr_auto] md:grid-cols-1 mb-12 md:mb-0 md:pt-32 overfow-x-hidden"
       >
         <HeroLeftLine />
         <HeroTitle />
         <HeroRightSide />
         <HeroMobileVideo />
-        {/* <div className="h-fit hidden md:block my-12">
-          <video
-            src="/videos/showreel.mp4"
-            autoPlay
-            className="w-full rounded-lg aspect-video "
-            muted
-            loop
-          />
-        </div> */}
         <HeroMobileGlobe />
       </motion.section>
     </div>

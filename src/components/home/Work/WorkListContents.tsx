@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Parallax from "../animated/Parallax";
+import Parallax from "../../animated/Parallax";
 import { WorkData } from "@/data/work-data";
 import { motion } from "motion/react";
 import { SMOOTH_EASING } from "@/lib/constants";

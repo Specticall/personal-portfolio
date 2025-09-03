@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import WorkList from "./WorkList";
-import Button from "../general/Button";
-import TextMaskReveal from "../animated/TextMaskReveal";
+import Button from "../../general/Button";
+import TextMaskReveal from "../../animated/TextMaskReveal";
 
 export default function Work() {
   return (
@@ -28,7 +28,7 @@ export default function Work() {
                     className="-rotate-135 text-[clamp(1rem,4vw,1.5rem)]"
                   />
                 </div>
-                {/* The desktop version of the text is seperated to retain the break liens */}
+                {/* The desktop version of the text is seperated to retain the break lines */}
                 <>
                   <TextMaskReveal
                     className="whitespace-nowrap sm:hidden"

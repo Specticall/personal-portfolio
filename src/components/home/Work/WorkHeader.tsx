@@ -1,7 +1,7 @@
 "use client";
 
 import { WorkData } from "@/data/work-data";
-import TextMaskReveal from "../animated/TextMaskReveal";
+import TextMaskReveal from "../../animated/TextMaskReveal";
 import { motion } from "motion/react";
 import { SMOOTH_EASING } from "@/lib/constants";
 import { Icon } from "@iconify/react";

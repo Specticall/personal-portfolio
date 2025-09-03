@@ -6,7 +6,7 @@ import Hero from "@/components/home/Hero/Hero";
 import Narrative from "@/components/home/Narrative";
 import Services from "@/components/home/Services";
 import ShowReelVideo from "@/components/home/ShowReelVideo";
-import Work from "@/components/home/Work";
+import Work from "@/components/home/Work/Work";
 import Preloader from "@/components/preloader/Preloader";
 import ReactLenis from "lenis/react";
 
