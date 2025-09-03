@@ -38,12 +38,12 @@ export default function HeroLeftLine() {
             delay: LOADER_DELAY,
             ease: SLOW_DOWN_EASING,
           }}
-          className="vertical-lr rotate-180 text-body text-secondary md:hidden px-20"
+          className="vertical-lr rotate-180 text-body text-secondary md:hidden"
         >
           <p>• BASED IN INDONESIA</p>
         </motion.div>
       </div>
-      <div className="z-10 hidden md:flex absolute sm:-left-2 -left-3.5  bottom-24 items-center gap-3">
+      <div className="z-10 hidden md:flex absolute sm:-left-2 -left-3.5 bottom-1/4 items-center gap-3">
         <motion.div
           initial={{ rotate: -180, scale: 1.5, opacity: 0 }}
           animate={{ rotate: 0, scale: 1, opacity: 1 }}
@@ -89,7 +89,7 @@ export default function HeroLeftLine() {
           ease: SLOW_DOWN_EASING,
           delay: LOADER_DELAY,
         }}
-        className="h-[85%] relative my-auto w-[1px] bg-secondary/50 ml-2 xs:ml-2 origin-bottom"
+        className="h-full relative top-20 my-auto w-[1px] bg-secondary/50 ml-2 xs:ml-2 origin-bottom"
       ></motion.div>
     </div>
   );

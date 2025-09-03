@@ -27,7 +27,12 @@ export default function Navbar() {
         <p className="text-[clamp(1.25rem,4vw,1.5rem)] font-semibold! text-black">
           ©Joseph
         </p>
-        <Button className="md:hidden text-white bg-black">Contact Me</Button>
+        <ul className=" flex items-center justify-center text-body gap-8 text-black md:hidden">
+          <li>Home</li>
+          <li>Projects</li>
+          <li>About</li>
+          <Button className="md:hidden text-white bg-black">Contact Me</Button>
+        </ul>
       </section>
     </motion.nav>
   );

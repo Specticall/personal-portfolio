@@ -17,7 +17,7 @@ export default function HeroArrowCircle() {
     >
       <Icon
         icon={"clarity:arrow-line"}
-        className="-rotate-180 text-[clamp(1.5rem,5vw,3.5rem)]"
+        className="-rotate-180 text-[clamp(1.5rem,5vw,2.5rem)]"
       />
     </motion.div>
   );

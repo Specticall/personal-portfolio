@@ -1,15 +1,11 @@
 "use client";
-import {
-  BREAKPOINT_XL,
-  SMOOTH_EASING,
-  SMOOTH_FAST_EASING,
-} from "@/lib/constants";
+import { BREAKPOINT_LG, SMOOTH_FAST_EASING } from "@/lib/constants";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useLayoutEffect, useRef, useState } from "react";
 import { LOADER_DELAY } from "./Hero/Hero";
 
 export default function ShowReelVideo() {
-  const [isUnderXL, setIsUnderXL] = useState(false);
+  const [isUnderLG, setIsUnderLG] = useState(false);
   const [anchorHeight, setAnchorHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -17,20 +13,20 @@ export default function ShowReelVideo() {
     offset: ["start end", "end start"],
   });
 
-  const offsetYShift = isUnderXL ? 0.55 : 0.78;
+  const offsetYShift = isUnderLG ? 0.5 : 0.73;
   const y = useTransform(
     scrollYProgress,
     [0.1, 0.35],
     [-offsetYShift * anchorHeight, 0]
   );
-  const scale = useTransform(scrollYProgress, [0.1, 0.35], [0.5, 1]);
+  const scale = useTransform(scrollYProgress, [0.1, 0.35], [0.6, 1]);
 
   useLayoutEffect(() => {
     // We're opting out refs here for better code clarity, as passing them from the target element can be challenging and may reduce readability.
     const target = document.querySelector("#showreel-anchor");
     if (!target) return;
     const observer = new ResizeObserver(([entry]) => {
-      setIsUnderXL(window.innerWidth < BREAKPOINT_XL);
+      setIsUnderLG(window.innerWidth < BREAKPOINT_LG);
       setAnchorHeight(entry.contentRect.height);
     });
     observer.observe(target);

@@ -13,7 +13,7 @@ export default function HeroStar(props: HTMLMotionProps<"div">) {
         duration: 1,
         ease: SLOW_DOWN_EASING,
       }}
-      className={cn("absolute -right-[17.5%] top-0", props.className)}
+      className={cn("", props.className)}
     >
       <Icon
         icon={"iconoir:spark-solid"}

@@ -54,72 +54,68 @@ export default function Preloader() {
 
   return (
     <AnimatePresence mode="wait">
-      <div className="overflow-hidden">
-        {isLoading && (
-          <motion.div
-            variants={{
-              hide: {
-                scale: 1.4,
+      {isLoading && (
+        <motion.div
+          variants={{
+            hide: {
+              scale: 1.4,
+            },
+            show: {
+              scale: 1,
+              opacity: 1,
+              transition: {
+                duration: LOADER_TIME,
+                ease: SLOW_DOWN_EASING,
               },
-              show: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  duration: LOADER_TIME,
+            },
+            exit: {
+              scale: 0.5,
+              opacity: 0,
+              transition: {
+                duration: LOADER_EXIT_TIME,
+                ease: SMOOTH_EASING,
+              },
+            },
+          }}
+          initial={"hide"}
+          animate={"show"}
+          exit={"exit"}
+          className="bg-[#fbfbfb] flex items-center justify-center min-h-dvh z-[999] fixed inset-0 inverted-colors"
+        >
+          <div className="inverted-colors">
+            <motion.div
+              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                y: {
+                  duration: 1,
                   ease: SLOW_DOWN_EASING,
                 },
-              },
-              exit: {
-                scale: 0.5,
-                opacity: 0,
-                transition: {
-                  duration: LOADER_EXIT_TIME,
-                  ease: SMOOTH_EASING,
-                },
-              },
-            }}
-            initial={"hide"}
-            animate={"show"}
-            exit={"exit"}
-            className="bg-[#fbfbfb] flex items-center justify-center min-h-dvh z-[999] fixed inset-0 inverted-colors"
-          >
-            <div className="inverted-colors">
-              <motion.div
-                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{
-                  y: {
-                    duration: 1,
-                    ease: SLOW_DOWN_EASING,
-                  },
-                  duration: 0.75,
-                }}
-                className="flex flex-col justify-between items-center min-h-dvh p-6 w-full"
-              >
-                <p className="text-body text-black/50 bg-transparent">
-                  <TextMaskReveal content="Portfolio." />
-                </p>
-                <h2 className="bg-transparent text-large text-black">
-                  {count}%
-                </h2>
-                <p className="text-body text-black/50 bg-transparent">
-                  <TextMaskReveal content="© Joseph" duration={1.5} />
-                </p>
-              </motion.div>
-              <motion.div
-                style={{
-                  scaleY,
-                }}
-                transition={{
-                  duration: LOADER_TIME,
-                  ease: SMOOTH_EASING,
-                }}
-                className="bg-white fixed inset-0 top-0 -z-10 origin-bottom"
-              ></motion.div>
-            </div>
-          </motion.div>
-        )}
-      </div>
+                duration: 0.75,
+              }}
+              className="flex flex-col justify-between items-center min-h-dvh p-6 w-full"
+            >
+              <p className="text-body text-black/50 bg-transparent">
+                <TextMaskReveal content="Portfolio." />
+              </p>
+              <h2 className="bg-transparent text-large text-black">{count}%</h2>
+              <p className="text-body text-black/50 bg-transparent">
+                <TextMaskReveal content="© Joseph" duration={1.5} />
+              </p>
+            </motion.div>
+            <motion.div
+              style={{
+                scaleY,
+              }}
+              transition={{
+                duration: LOADER_TIME,
+                ease: SMOOTH_EASING,
+              }}
+              className="bg-white fixed inset-0 top-0 -z-10 origin-bottom"
+            ></motion.div>
+          </div>
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 }

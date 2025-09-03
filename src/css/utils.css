@@ -10,10 +10,16 @@
 }
 
 .text-title {
-  font-size: clamp(4rem, 20vw, 10rem);
+  font-size: clamp(6rem, 10vw, 10rem);
   letter-spacing: -3%;
   font-weight: 600;
   line-height: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .text-title {
+    font-size: clamp(4.5rem, 14vw, 10rem);
+  }
 }
 
 .text-heading {

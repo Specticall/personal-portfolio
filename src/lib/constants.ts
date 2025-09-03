@@ -4,3 +4,4 @@ export const SMOOTH_FAST_EASING = [0.83, 0, 0.17, 1] as const;
 
 export const BREAKPOINT_2XL = 1535;
 export const BREAKPOINT_XL = 1279;
+export const BREAKPOINT_LG = 1023;
