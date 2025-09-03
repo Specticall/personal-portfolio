@@ -39,22 +39,22 @@ export default function ShowReelVideo() {
     return () => observer.disconnect();
   }, [ref]);
 
-  // Mouse Move effect
-  const posX = useMotionValue(0);
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      posX.set((window.innerWidth / 2 - e.clientX) * -1);
-    };
-    window.addEventListener("mousemove", handler);
-    return () => {
-      window.removeEventListener("mousemove", handler);
-    };
-  }, [posX]);
-  const x = useTransform([posX, scrollYProgress], (value: number[]) => {
-    const [xValue, scrollY] = value;
-    const val = xValue * Math.max(0.35 - scrollY, 0);
-    return val;
-  });
+  // // Mouse Move effect
+  // const posX = useMotionValue(0);
+  // useEffect(() => {
+  //   const handler = (e: MouseEvent) => {
+  //     posX.set((window.innerWidth / 2 - e.clientX) * -1);
+  //   };
+  //   window.addEventListener("mousemove", handler);
+  //   return () => {
+  //     window.removeEventListener("mousemove", handler);
+  //   };
+  // }, [posX]);
+  // const x = useTransform([posX, scrollYProgress], (value: number[]) => {
+  //   const [xValue, scrollY] = value;
+  //   const val = xValue * Math.max(0.35 - scrollY, 0);
+  //   return val;
+  // });
 
   return (
     <>
@@ -71,7 +71,7 @@ export default function ShowReelVideo() {
           ease: SMOOTH_FAST_EASING,
           delay: LOADER_DELAY - 0.5,
         }}
-        style={{ y, x, scale }}
+        style={{ y, scale }}
         className="section md:hidden  px-4 sm:px-0 sm:mt-0 -z-10 relative aspect-video"
       >
         <motion.video
